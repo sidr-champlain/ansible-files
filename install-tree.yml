@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  user: deployer
+  become: True
+  tasks:
+    - name: Install tree package
+      yum:
+        name: tree
+        state: present
+        update_cache: True

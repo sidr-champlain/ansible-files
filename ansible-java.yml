@@ -1,0 +1,11 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+  - name: Run update
+    yum:
+      update_cache: true
+  - name: Install jdk
+    package:
+      name: java-1.8.0-openjdk
+      state: present

@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  user: deployer
+  become: True
+  tasks:
+    - name: Install Git
+      yum:
+        name: git
+        state: present
+        update_cache: True

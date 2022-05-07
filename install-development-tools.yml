@@ -1,0 +1,9 @@
+---
+- hosts: webservers 
+  user: deployer
+  become: True
+  tasks:
+    - name: Install the 'Development tools' package group
+      yum:
+        name: "@Development tools"
+        state: present

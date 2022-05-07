@@ -1,0 +1,11 @@
+---
+- name: Ansible Create User
+  hosts: webservers
+  become: True
+  tasks:
+    - name: Add the user 'clown' with a specific uid and a primary group of 'wheel'
+      ansible.builtin.user:
+        name: clown
+        group: wheel
+        createhome: yes
+        home: /home/clown
