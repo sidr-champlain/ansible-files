@@ -1,0 +1,10 @@
+---
+- hosts: webservers
+  user: deployer
+  become: True
+  tasks:
+    - name: Install httpd package
+      yum:
+        name: httpd
+        state: present
+        update_cache: True
