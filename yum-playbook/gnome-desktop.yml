@@ -1,0 +1,9 @@
+---
+- hosts: webservers 
+  user: deployer
+  become: True
+  tasks:
+    - name: Install the 'Gnome desktop' environment group
+      yum:
+        name: "@^gnome-desktop-environment"
+        state: present
