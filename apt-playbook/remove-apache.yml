@@ -1,0 +1,9 @@
+---
+ - name: Playbook to Uninstall Apache
+   hosts: ubuntu
+   become: true
+   tasks: 
+    - name: Ansible apt uninstall Apache
+      apt:
+        name: apache2
+        state: absent
